@@ -1,0 +1,94 @@
+.slider {
+  min-height: 600px;
+  position: relative;
+}
+
+.slider__line {
+  display: flex;
+  transition: all 1s;
+}
+
+.slider__slide {
+  margin: 0 -112px 0 -112px;
+  padding: 60px 112px 45px 112px;
+  position: absolute;
+  display: flex;
+  background-image: url("../img/ellipse.png");
+  background-repeat: no-repeat;
+}
+
+.slider__slide--plan {
+  background-image: url("../img/dog-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: @dark-blue;
+}
+
+.slider__slide-title {
+  margin: 45px 0 24px 0;
+  font-size: 50px;
+  line-height: 61px;
+  font-weight: 600;
+  color: #BEE7E8;
+}
+
+.slider__slide-title--plan {
+  color: @dark-blue;
+}
+
+.slider__slide-description {
+  width: 70%;
+  margin: 0 0 32px 0;
+  font-size: 30px;
+  line-height: 37px;
+  color: #A0D2DB;
+}
+
+.slider__slide-description--plan {
+  width: 50%;
+  margin: 0 0 24px 0;
+  color: @dark-blue;
+}
+
+.slider__slide-price {
+  margin: 0 0 24px 0;
+  font-size: 42px;
+  line-height: 51px;
+  font-weight: 600;
+}
+
+.slider__slide-button {
+  margin: 0 0 100px 0;
+}
+
+.slider__button {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+  color: #726DA8;
+  background-color: @white;
+  cursor: pointer;
+}
+
+.slider__button:disabled {
+  color: #BEE7E8;
+}
+
+.slider__button--prev {
+  top: 32px;
+}
+
+.slider__button--next {
+  top: 32px;
+  right: 0;
+}
+
+.slider__wrapper {
+  display: none;
+}
