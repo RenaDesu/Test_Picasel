@@ -227,6 +227,67 @@
         </a>
       </div>
     </footer>
+    <div class="modal-container modal-container--closed modal-container-opened">
+      <div class="modal-container-opened__wrapper">
+        <button class="modal-container-opened__close-button" type="button">
+          <span class="visually-hidden">Закрыть</span>
+          <span class="modal-container-opened__close-button-line"></span>
+        </button>
+        <p class="modal-container-opened__notice">
+          Чтобы подобрать план,
+          необходимо заполнить форму ниже</p>
+        <form class="modal-container-opened__form form">
+          <fieldset class="form__set radio-set">
+            <p class="radio-set__title">У меня:</p>
+            <ul class="radio-set__list">
+              <li class="radio-set__item">
+                <label class="radio-set__label">
+                  <input class="visually-hidden radio-set__input" type="radio" name="pet" value="cat" checked>
+                  <span class="radio-set__input-mark"></span>
+                  Кошка
+                </label>
+              </li>
+              <li class="radio-set__item">
+                <label class="radio-set__label">
+                  <input class="visually-hidden radio-set__input" type="radio" name="pet" value="dog">
+                  <span class="radio-set__input-mark"></span>
+                  Собака
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <fieldset class="form__set details-set">
+            <label class="visually-hidden" for="name">
+              Имя питомца
+            </label>
+            <input class="details-set__field" type="text" name="name" id="name" placeholder="Имя питомца">
+
+            <label class="visually-hidden" for="breed">
+              Порода питомца*
+            </label>
+            <input class="details-set__field" type="text" name="breed" id="breed" placeholder="Порода питомца*"
+              required>
+
+            <label class="visually-hidden" for="age">
+              Возраст питомца*
+            </label>
+            <input class="details-set__field" type="text" name="age" id="age" placeholder="Возраст питомца*" required>
+
+            <label class="visually-hidden" for="phone-number">
+              Ваш номер телефона
+            </label>
+            <input class="details-set__field" type="tel" name="phone-number" id="phone-number"
+              placeholder="Ваш номер телефона">
+
+            <label class="visually-hidden" for="email">
+              Ваш email*
+            </label>
+            <input class="details-set__field" type="email" name="email" id="email" placeholder="Ваш email*" required>
+          </fieldset>
+          <button class="modal-container-opened__submit button" type="submit">Отправить</button>
+        </form>
+      </div>
+    </div>
   </div>
   <script src="./js/index.js"></script>
 </body>
