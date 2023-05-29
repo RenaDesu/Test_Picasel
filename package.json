@@ -1,0 +1,31 @@
+{
+  "name": "test_picasel",
+  "version": "1.0.0",
+  "description": "Техническое задание\r Сверстать семантично и адаптивно макет, используя привычный/удобный стек технологий. Desktop first. Использовать БЭМ.\r Верстка должна корректно отображаться в Google Chrome, Mozilla, Edge, Safari, графика должна выглядеть корректно на ретина-экранах.\r Лого – ссылка на главную.\r Сделать эффект при hover на ссылки в навигации header на свой вкус\r Иконки с соцсетями должны быть кликабельными \r Слайдер можно реализовать любой удобной библиотекой \r “Связаться с нами” ведет к футеру \r “Подобрать план” вызывает попап. \r В попапе достаточно верстки формы. Собирать и отправлять данные не нужно. После отрабатывания кнопки “Отправить”, окно должно закрыться.\r Поля с * обязательны для заполнения\r Блок “Сколько стоит консультация с терапевтом” при hover открывает информацию. Анимация на свой вкус \r В блоке статьи “все статьи о кошках” – кликабельная ссылка\r Мобильное меню открывается на весь экран. Анимация на свой вкус\r Использование gulp",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp styles",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RenaDesu/Test_Picasel.git"
+  },
+  "author": "ELena Voloshina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RenaDesu/Test_Picasel/issues"
+  },
+  "homepage": "https://github.com/RenaDesu/Test_Picasel#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-less": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^9.0.1",
+    "postcss": "^8.4.24"
+  }
+}
