@@ -2,10 +2,22 @@
   margin: 0 138px 0 0;
   font-size: 23px;
   line-height: 28px;
+
+  @media (max-width: @mobile-width) {
+    margin: 0;
+    flex-direction: column;
+    font-size: 24px;
+    line-height: 29px;
+    font-weight: 400;
+  }
 }
 
 .site-list__item:not(:last-child) {
   margin: 0 40px 0 0;
+
+  @media (max-width: @mobile-width) {
+    margin: 0 0 14px 0;
+  }
 }
 
 .site-list__item:hover,
@@ -18,4 +30,8 @@
   padding: 10px 0;
   text-decoration: none;
   color: @black;
+
+  @media (max-width: @mobile-width) {
+    color: #BEE7E8;
+  }
 }

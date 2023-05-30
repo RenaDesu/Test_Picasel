@@ -1,8 +1,17 @@
 .main-footer {
-  padding: 49px 0 46px 0;
+  padding: 49px 112px 46px 112px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: @mobile-width) {
+    padding: 24px 0 49px 0;
+    flex-direction: column;
+  }
+}
+
+.main-footer__contacts {
+  margin: 0 0 32px 0;
 }
 
 .main-footer__copyright {
@@ -10,8 +19,21 @@
   font-size: 20px;
   line-height: 24px;
   color: #394573;
+
+  @media (max-width: @mobile-width) {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+  }
 }
 
 .main-footer__copyright-text {
   margin: 0;
+}
+
+.main-footer__logo-wrapper {
+  @media (max-width: @mobile-width) {
+    margin: 0 0 32px 0;
+    order: -1;
+  }
 }

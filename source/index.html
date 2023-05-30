@@ -19,7 +19,11 @@
         <img src="img/pawprint-logo.svg" width="64" height="64" alt="Логотип PetCare.">
         PetCare
       </a>
-      <nav class="main-nav">
+      <nav class="main-nav main-nav--closed">
+        <button class="main-nav__close-button main-nav__close-button--closed" type="button">
+          <span class="visually-hidden">Закрыть</span>
+          <span class="main-nav__close-button-line"></span>
+        </button>
         <ul class="main-nav__list site-list">
           <li class="site-list__item">
             <a href="#">
@@ -105,10 +109,13 @@
                   о ваших питомцах</h3>
                 <p class="slider__slide-description">Записывайтесь в ветклиники
                   и консультируйтесь с ветеринарным врачом онлайн</p>
-                <button class="slider__slide-button button button--special">Связаться с нами</button>
+                <a class="slider__slide-button button button--special" href="#contacts">Связаться с нами</a>
               </div>
-              <img class="slider__slide-image" src="img/cat-desktop.png" width="400" height="495"
-                alt="Изображение кота.">
+              <picture>
+                <source media="(max-width: 1350px)" srcset="img/cat-mobile.png 1x, img/cat-mobile@2x.png 2x">
+                <img class="slider__slide-image" src="img/cat-desktop.png" srcset="img/cat-desktop@2x.png" width="400" height="495"
+                  alt="Изображение кота.">
+              </picture>
             </div>
             <div class="slider__slide slider__slide--plan">
               <div class="slider__content-wrapper">
@@ -117,29 +124,29 @@
                   подобранного корма и других товаров
                   для кошек и собак</p>
                 <p class="slider__slide-price">от 1299 ₽/мес</p>
-                <button class="slider__slide-button button">Подобрать план</button>
+                <button class="slider__slide-button button" id="plan-btn">Подобрать план</button>
               </div>
             </div>
           </div>
-          <button class="slider__button slider__button--prev" type="button">
-            <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M10.9999 23C10.8683 23.0008 10.7378 22.9755 10.616 22.9258C10.4941 22.876 10.3833 22.8027 10.2899 22.71L1.70988 14.12C1.14808 13.5575 0.83252 12.795 0.83252 12C0.83252 11.205 1.14808 10.4425 1.70988 9.88L10.2899 1.29C10.4782 1.1017 10.7336 0.995911 10.9999 0.995911C11.2662 0.995911 11.5216 1.1017 11.7099 1.29C11.8982 1.47831 12.004 1.7337 12.004 2C12.004 2.2663 11.8982 2.5217 11.7099 2.71L3.11988 11.29C3.02615 11.383 2.95176 11.4936 2.90099 11.6154C2.85022 11.7373 2.82408 11.868 2.82408 12C2.82408 12.132 2.85022 12.2627 2.90099 12.3846C2.95176 12.5064 3.02615 12.617 3.11988 12.71L11.7099 21.29C11.8036 21.383 11.878 21.4936 11.9288 21.6154C11.9795 21.7373 12.0057 21.868 12.0057 22C12.0057 22.132 11.9795 22.2627 11.9288 22.3846C11.878 22.5064 11.8036 22.617 11.7099 22.71C11.6164 22.8027 11.5056 22.876 11.3838 22.9258C11.2619 22.9755 11.1315 23.0008 10.9999 23Z"
-                fill="currentColor" />
-            </svg>
-          </button>
-          <button class="slider__button slider__button--next" type="button">
-            <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M2.00012 -1.90735e-06C2.13173 -0.000762939 2.26219 0.0244617 2.38403 0.0742264C2.50587 0.123991 2.61668 0.197317 2.71012 0.289999L11.2901 8.88C11.8519 9.4425 12.1675 10.205 12.1675 11C12.1675 11.795 11.8519 12.5575 11.2901 13.12L2.71012 21.71C2.52182 21.8983 2.26642 22.0041 2.00012 22.0041C1.73382 22.0041 1.47843 21.8983 1.29012 21.71C1.10182 21.5217 0.996029 21.2663 0.996029 21C0.996029 20.7337 1.10182 20.4783 1.29012 20.29L9.88012 11.71C9.97385 11.617 10.0482 11.5064 10.099 11.3846C10.1498 11.2627 10.1759 11.132 10.1759 11C10.1759 10.868 10.1498 10.7373 10.099 10.6154C10.0482 10.4936 9.97385 10.383 9.88012 10.29L1.29012 1.71C1.19639 1.61703 1.122 1.50643 1.07123 1.38457C1.02046 1.26272 0.994322 1.13201 0.994322 0.999998C0.994322 0.867987 1.02046 0.73728 1.07123 0.615421C1.122 0.493563 1.19639 0.382961 1.29012 0.289999C1.38356 0.197317 1.49438 0.123991 1.61621 0.0742264C1.73805 0.0244617 1.86851 -0.000762939 2.00012 -1.90735e-06Z"
-                fill="currentColor" />
-            </svg>
-          </button>
-          <div class="slider__wrapper">
-            <div class="slider__dot slider__dot--active"></div>
-            <div class="slider__dot"></div>
+            <button class="slider__button slider__button--prev" id="prev" type="button">
+              <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M10.9999 23C10.8683 23.0008 10.7378 22.9755 10.616 22.9258C10.4941 22.876 10.3833 22.8027 10.2899 22.71L1.70988 14.12C1.14808 13.5575 0.83252 12.795 0.83252 12C0.83252 11.205 1.14808 10.4425 1.70988 9.88L10.2899 1.29C10.4782 1.1017 10.7336 0.995911 10.9999 0.995911C11.2662 0.995911 11.5216 1.1017 11.7099 1.29C11.8982 1.47831 12.004 1.7337 12.004 2C12.004 2.2663 11.8982 2.5217 11.7099 2.71L3.11988 11.29C3.02615 11.383 2.95176 11.4936 2.90099 11.6154C2.85022 11.7373 2.82408 11.868 2.82408 12C2.82408 12.132 2.85022 12.2627 2.90099 12.3846C2.95176 12.5064 3.02615 12.617 3.11988 12.71L11.7099 21.29C11.8036 21.383 11.878 21.4936 11.9288 21.6154C11.9795 21.7373 12.0057 21.868 12.0057 22C12.0057 22.132 11.9795 22.2627 11.9288 22.3846C11.878 22.5064 11.8036 22.617 11.7099 22.71C11.6164 22.8027 11.5056 22.876 11.3838 22.9258C11.2619 22.9755 11.1315 23.0008 10.9999 23Z"
+                  fill="currentColor" />
+              </svg>
+            </button>
+            <button class="slider__button slider__button--next" id="next" type="button">
+              <svg width="13" height="23" viewBox="0 0 13 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M2.00012 -1.90735e-06C2.13173 -0.000762939 2.26219 0.0244617 2.38403 0.0742264C2.50587 0.123991 2.61668 0.197317 2.71012 0.289999L11.2901 8.88C11.8519 9.4425 12.1675 10.205 12.1675 11C12.1675 11.795 11.8519 12.5575 11.2901 13.12L2.71012 21.71C2.52182 21.8983 2.26642 22.0041 2.00012 22.0041C1.73382 22.0041 1.47843 21.8983 1.29012 21.71C1.10182 21.5217 0.996029 21.2663 0.996029 21C0.996029 20.7337 1.10182 20.4783 1.29012 20.29L9.88012 11.71C9.97385 11.617 10.0482 11.5064 10.099 11.3846C10.1498 11.2627 10.1759 11.132 10.1759 11C10.1759 10.868 10.1498 10.7373 10.099 10.6154C10.0482 10.4936 9.97385 10.383 9.88012 10.29L1.29012 1.71C1.19639 1.61703 1.122 1.50643 1.07123 1.38457C1.02046 1.26272 0.994322 1.13201 0.994322 0.999998C0.994322 0.867987 1.02046 0.73728 1.07123 0.615421C1.122 0.493563 1.19639 0.382961 1.29012 0.289999C1.38356 0.197317 1.49438 0.123991 1.61621 0.0742264C1.73805 0.0244617 1.86851 -0.000762939 2.00012 -1.90735e-06Z"
+                  fill="currentColor" />
+              </svg>
+            </button>
+            <div class="slider__wrapper">
+              <div class="slider__dot slider__dot--active"></div>
+              <div class="slider__dot"></div>
+            </div>
           </div>
-        </div>
       </section>
       <section class="main-content">
         <ul class="main-content__list content-list">
@@ -210,7 +217,7 @@
       </section>
     </main>
     <footer class="main-footer">
-      <section class="main-footer__contacts contacts">
+      <section class="main-footer__contacts contacts" id="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <address class="contacts__contacts">
           <a href="tel:+78009998877">8 (800) 999-88-77</a>
@@ -227,16 +234,16 @@
         </a>
       </div>
     </footer>
-    <div class="modal-container modal-container--closed modal-container-opened">
-      <div class="modal-container-opened__wrapper">
-        <button class="modal-container-opened__close-button" type="button">
+    <div class="modal-container modal-container--closed">
+      <div class="modal-container__wrapper">
+        <button class="modal-container__close-button" type="button">
           <span class="visually-hidden">Закрыть</span>
-          <span class="modal-container-opened__close-button-line"></span>
+          <span class="modal-container__close-button-line"></span>
         </button>
-        <p class="modal-container-opened__notice">
-          Чтобы подобрать план,
+        <p class="modal-container__notice">
+          Чтобы подобрать план, <br>
           необходимо заполнить форму ниже</p>
-        <form class="modal-container-opened__form form">
+        <form class="modal-container__form form">
           <fieldset class="form__set radio-set">
             <p class="radio-set__title">У меня:</p>
             <ul class="radio-set__list">
@@ -284,7 +291,7 @@
             </label>
             <input class="details-set__field" type="email" name="email" id="email" placeholder="Ваш email*" required>
           </fieldset>
-          <button class="modal-container-opened__submit button" type="submit">Отправить</button>
+          <button class="modal-container__submit-button button" type="submit">Отправить</button>
         </form>
       </div>
     </div>
