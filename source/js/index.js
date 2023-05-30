@@ -96,3 +96,16 @@ sliderDots.forEach((dot, index) => {
     currentSlide(sliderCount);
   })
 })
+
+
+if (window.matchMedia('(max-width: 1350px)').matches) {
+  setInterval(() => {
+    sliderCount++;
+    if (sliderCount > sliderDots.length - 1) {
+        sliderCount = 0;
+    }
+    rollSlider();
+    currentSlide(sliderCount);
+
+  }, 10000);
+}
