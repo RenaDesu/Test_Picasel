@@ -56,6 +56,23 @@
   background-position: center;
 }
 
+.content-list__item-wrapper {
+  margin: 0 -40px;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(51, 51, 51, 1));
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+
+  @media (max-width: @mobile-width) {
+    margin: 0 -20px;
+    padding: 0 20px;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+}
+
 .content-list__title {
   margin: 0 0 16px 0;
   font-size: 32px;

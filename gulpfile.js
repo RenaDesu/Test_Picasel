@@ -10,6 +10,7 @@ import rename from 'gulp-rename';
 import terser from 'gulp-terser';
 import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
+import svgstore from 'gulp-svgstore';
 import {
   deleteAsync
 } from 'del';
@@ -68,8 +69,18 @@ const copyImages = () => {
 // SVG
 
 const svg = () => {
-  return gulp.src('source/img/*.svg')
+  return gulp.src(['source/img/*.svg', '!source/img/icons/*.svg'])
     .pipe(svgo())
+    .pipe(gulp.dest('build/img'));
+}
+
+const sprite = () => {
+  return gulp.src('source/img/icons/*.svg')
+    .pipe(svgo())
+    .pipe(svgstore({
+      inlineSvg: true
+    }))
+    .pipe(rename('sprite.svg'))
     .pipe(gulp.dest('build/img'));
 }
 
@@ -132,6 +143,7 @@ export const build = gulp.series(
     html,
     scripts,
     svg,
+    sprite
   ),
 );
 
@@ -146,35 +158,9 @@ export default gulp.series(
   html,
   scripts,
   svg,
+  sprite
   ),
   gulp.series(
   server,
   watcher
   ));
-
-
-// // Server
-
-// const server = (done) => {
-//   browser.init({
-//     server: {
-//       baseDir: 'source'
-//     },
-//     cors: true,
-//     notify: false,
-//     ui: false,
-//   });
-//   done();
-// }
-
-// // Watcher
-
-// const watcher = () => {
-//   gulp.watch('source/less/**/*.less', gulp.series(styles));
-//   gulp.watch('source/*.html').on('change', browser.reload);
-// }
-
-
-// export default gulp.series(
-//   styles, server, watcher
-// );
