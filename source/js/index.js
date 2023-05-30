@@ -13,6 +13,14 @@ const popUp = document.querySelector('.modal-container');
 const popUpCloseBtn = document.querySelector('.modal-container__close-button');
 const form = document.querySelector('.form');
 
+function changeContent() {
+  if (window.matchMedia('(max-width: 1350px)').matches) {
+    document.querySelector('#description').textContent = "Записывайтесь в ветклиники и консультируйтесь с ветеринарами онлайн";
+  }
+}
+
+changeContent();
+
 // Burger menu
 
 mainHeaderToggle.addEventListener('click', () => {
