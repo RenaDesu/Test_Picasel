@@ -14,7 +14,7 @@ const popUpCloseBtn = document.querySelector('.modal-container__close-button');
 const form = document.querySelector('.form');
 
 function changeContent() {
-  if (window.matchMedia('(max-width: 1350px)').matches) {
+  if (window.matchMedia('(max-width: 1330px)').matches) {
     document.querySelector('#description').textContent = "Записывайтесь в ветклиники и консультируйтесь с ветеринарами онлайн";
   }
 }
@@ -98,7 +98,7 @@ sliderDots.forEach((dot, index) => {
 })
 
 
-if (window.matchMedia('(max-width: 1350px)').matches) {
+if (window.matchMedia('(max-width: 1330px)').matches) {
   setInterval(() => {
     sliderCount++;
     if (sliderCount > sliderDots.length - 1) {
